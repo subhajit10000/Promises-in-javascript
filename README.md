@@ -1,1 +1,7 @@
-# Promises-in-javascript
+The given code demonstrates the use of JavaScript Promises to simulate the workflow of a food delivery application. It represents a sequence of asynchronous operations where each task depends on the successful completion of the previous one. The process begins by creating a new Promise that logs "order placed" and waits for five seconds using the setTimeout() function. If the orderPlaceIndicator is true, the order is accepted by the restaurant, and the Promise is resolved. Otherwise, it is rejected, stopping the remaining process.
+
+The first then() block represents the food preparation stage. A new Promise is returned, introducing another five-second delay. If preparationIndicator is true, the food is marked as ready to pack, and the Promise resolves. If not, the Promise is rejected.
+
+The next then() block simulates the delivery stage. It logs "out for delivery" and checks the deliveryStatus variable. Since it is set to false, the Promise is rejected after five seconds, indicating that the order could not be delivered. Because of this rejection, the remaining then() blocks for payment and item delivery are skipped.
+
+The catch() block handles any error that occurs during the Promise chain by displaying "System failed." Finally, the finally() block executes regardless of success or failure, logging "promise end." This example clearly illustrates Promise chaining, asynchronous execution, error handling, and cleanup in JavaScript.
